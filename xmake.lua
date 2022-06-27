@@ -1,0 +1,5 @@
+add_rules("mode.debug", "mode.release")
+target("quickjs")
+    set_kind("$(kind)")
+    add_files("quickjs.c", "cutils.c", "libregexp.c", "libunicode.c", "quickjs-libc.c")
+    add_headerfiles("quickjs.h")
