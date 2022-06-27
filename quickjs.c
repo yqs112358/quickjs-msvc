@@ -41,6 +41,9 @@
 
 #ifdef _MSC_VER
 #include <WinSock2.h>
+double _log2(double x) {
+    return log(x) / log(2);
+}
 
 // From: https://stackoverflow.com/a/26085827
 int gettimeofday(struct timeval * tp, struct timezone * tzp)
@@ -39744,7 +39747,7 @@ static const JSCFunctionListEntry js_math_funcs[] = {
     JS_CFUNC_SPECIAL_DEF("atanh", 1, f_f, atanh ),
     JS_CFUNC_SPECIAL_DEF("expm1", 1, f_f, expm1 ),
     JS_CFUNC_SPECIAL_DEF("log1p", 1, f_f, log1p ),
-    JS_CFUNC_SPECIAL_DEF("log2", 1, f_f, log2 ),
+    JS_CFUNC_SPECIAL_DEF("log2", 1, f_f, _log2 ),
     JS_CFUNC_SPECIAL_DEF("log10", 1, f_f, log10 ),
     JS_CFUNC_SPECIAL_DEF("cbrt", 1, f_f, cbrt ),
     JS_CFUNC_DEF("hypot", 2, js_math_hypot ),
